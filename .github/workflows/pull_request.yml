@@ -1,0 +1,29 @@
+name: ci
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  ci:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+      - name: setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16.3.0'
+          cache: 'npm'
+          cache-dependency-path: 'package-lock.json'
+      - name: install dependencies from cache
+        run: npm ci
+      - name: run Typescript compiler
+        run: npm run type
+      - name: run Stylelint
+        run: npm run lint:style:fix
+      - name: run ESLint
+        run: npm run lint:es:fix
+      - name: run Prettier
+        run: npm run format:fix
+      - name: run Jest
+        run: npm run test:ci
