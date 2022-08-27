@@ -1,37 +1,24 @@
-html,
+html {
+  max-width: 930px;
+  margin: 2.5em auto 0;
+}
+
+.container {
+  width: 700px !important;
+  max-width: none !important;
+  font-size: 1rem !important;
+}
+
+.app-header {
+  padding: 20px;
+  margin-bottom: 4em;
+  color: white;
+  text-align: center;
+  background-color: #222;
+}
+
 body {
   padding: 0;
   margin: 0;
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-
-  body {
-    color: white;
-    background: black;
-  }
+  font-family: sans-serif;
 }
